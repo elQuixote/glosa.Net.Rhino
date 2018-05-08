@@ -55,5 +55,25 @@ namespace GlosaNet.Rhino.Support
             rv.Y = (float)glosaVector.y;
             return rv;
         }
+
+        /// <summary>
+        /// Creates a GlosaVector3 from a Rhino Vector3d
+        /// </summary>
+        /// <param name="rhinoVector">The Rhino Vector3d</param>
+        /// <returns>A new GlosaVector3 with the three, X and Y and Z, components from the Rhino Vector3d</returns>
+        public static GlosaVector3 ToGlosaVector3(Vector3d rhinoVector)
+        {
+            return new GlosaVector3(rhinoVector.X, rhinoVector.Y, rhinoVector.Z);
+        }
+
+        /// <summary>
+        /// Creates a GlosaVector3 from a Rhino Vector3f
+        /// </summary>
+        /// <param name="rhinoVector">The Rhino Vector3f</param>
+        /// <returns>A new GlosaVector2 with the three, X and Y and Z, components from the Rhino Vector3f</returns>
+        public static GlosaVector3 ToGlosaVector3(Vector3f rhinoVector)
+        {
+            return new GlosaVector3(rhinoVector.X, rhinoVector.Y, rhinoVector.Z);
+        }
     }
 }
