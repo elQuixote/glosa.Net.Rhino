@@ -32,5 +32,28 @@ namespace GlosaNet.Rhino.Support
         {
             return new GlosaVector2(rhinoVector.X, rhinoVector.Y);
         }
+
+        /// <summary>
+        /// Creates a RhinoVector2d from a GlosaVector2
+        /// </summary>
+        /// <param name="glosaVector">The glosaVector2 to convert</param>
+        /// <returns>A new Rhino Vector2d with the two, X and Y, components from the GlosaVector2</returns>
+        public static Vector2d ToVector2d(GlosaVector2 glosaVector)
+        {
+            return new Vector2d(glosaVector.x, glosaVector.y);
+        }
+
+        /// <summary>
+        /// Creates a RhinoVector2f from a GlosaVector2
+        /// </summary>
+        /// <param name="glosaVector">The glosaVector2 to convert</param>
+        /// <returns>A new Rhino Vector2f with the two, X and Y, components from the GlosaVector2</returns>
+        public static Vector2f ToVector2f(GlosaVector2 glosaVector)
+        {
+            Vector2f rv = new Vector2f();
+            rv.X = (float)glosaVector.x;
+            rv.Y = (float)glosaVector.y;
+            return rv;
+        }
     }
 }
