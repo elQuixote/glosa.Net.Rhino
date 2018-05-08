@@ -55,5 +55,45 @@ namespace GlosaNet.Rhino.Support
             rv.Y = (float)glosaVector.y;
             return rv;
         }
+
+        /// <summary>
+        /// Creates a GlosaVector3 from a Rhino Point3d
+        /// </summary>
+        /// <param name="rhinoVector">The Rhino Point3d</param>
+        /// <returns>A new GlosaVector3 with the three, X and Y and Z, components from the Rhino Point3d</returns>
+        public static GlosaVector3 ToGlosaVector3(Point3d rhinoPoint)
+        {
+            return new GlosaVector3(rhinoPoint.X, rhinoPoint.Y, rhinoPoint.Z);
+        }
+
+        /// <summary>
+        /// Creates a GlosaVector3 from a Rhino Point3f
+        /// </summary>
+        /// <param name="rhinoVector">The Rhino Point3f</param>
+        /// <returns>A new GlosaVector2 with the three, X and Y and Z, components from the Rhino Point3f</returns>
+        public static GlosaVector3 ToGlosaVector3(Point3f rhinoVector)
+        {
+            return new GlosaVector3(rhinoVector.X, rhinoVector.Y, rhinoVector.Z);
+        }
+
+        /// <summary>
+        /// Creates a Rhino Point3d from a GlosaVector3
+        /// </summary>
+        /// <param name="glosaVector">The glosaVector3 to convert</param>
+        /// <returns>A new Rhino Point3d with the three, X and Y and Z, components from the GlosaVector3</returns>
+        public static Point3d ToPoint3d(GlosaVector3 glosaVector)
+        {
+            return new Point3d(glosaVector.x, glosaVector.y, glosaVector.z);
+        }
+
+        /// <summary>
+        /// Creates a Rhino Point3f from a GlosaVector3
+        /// </summary>
+        /// <param name="glosaVector">The glosaVector3 to convert</param>
+        /// <returns>A new Rhino Point3f with the three, X and Y and Z, components from the GlosaVector3</returns>
+        public static Point3f ToPoint3f(GlosaVector3 glosaVector)
+        {
+            return new Point3f((float)glosaVector.x, (float)glosaVector.y, (float)glosaVector.z);
+        }
     }
 }
