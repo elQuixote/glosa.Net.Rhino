@@ -13,6 +13,7 @@ namespace GlosaNet.Rhino.Support
     /// </summary>
     public static class PointSupport
     {
+        #region Vector2
         /// <summary>
         /// Creates a GlosaVector2 from a Rhino Point2d
         /// </summary>
@@ -55,7 +56,8 @@ namespace GlosaNet.Rhino.Support
             rv.Y = (float)glosaVector.y;
             return rv;
         }
-
+        #endregion
+        #region Vector3
         /// <summary>
         /// Creates a GlosaVector3 from a Rhino Point3d
         /// </summary>
@@ -95,5 +97,73 @@ namespace GlosaNet.Rhino.Support
         {
             return new Point3f((float)glosaVector.x, (float)glosaVector.y, (float)glosaVector.z);
         }
+        #endregion
+        #region Vector4
+        /// <summary>
+        /// Creates a GlosaVector4 from a Rhino Point3d and user defined W component
+        /// </summary>
+        /// <param name="rhinoVector">The Rhino Point3d</param>
+        /// <param name="w">The w value</param>
+        /// <returns>A new GlosaVector4 with the three, X and Y and Z, components from the Rhino Point3d and user defined W</returns>
+        public static GlosaVector4 ToGlosaVector4(Point3d rhinoPoint, double w)
+        {
+            return new GlosaVector4(rhinoPoint.X, rhinoPoint.Y, rhinoPoint.Z, w);
+        }
+
+        /// <summary>
+        /// Creates a GlosaVector4 from a Rhino Point3f and user defined W component
+        /// </summary>
+        /// <param name="rhinoVector">The Rhino Point3f</param>
+        /// <param name="w">The w value</param>
+        /// <returns>A new GlosaVector4 with the three, X and Y and Z, components from the Rhino Point3f and user defined W</returns>
+        public static GlosaVector4 ToGlosaVector4(Point3f rhinoVector, double w)
+        {
+            return new GlosaVector4(rhinoVector.X, rhinoVector.Y, rhinoVector.Z, w);
+        }
+
+        /// <summary>
+        /// Creates a GlosaVector4 from a Rhino Point2d and user defined Z and W component
+        /// </summary>
+        /// <param name="rhinoVector">The Rhino Point2d</param>
+        /// <param name="z">The z value</param>
+        /// <param name="w">The w value</param>
+        /// <returns>A new GlosaVector4 with the two, X and Y, components from the Rhino Point3d and user defined Z and W</returns>
+        public static GlosaVector4 ToGlosaVector4(Point2d rhinoPoint, double z, double w)
+        {
+            return new GlosaVector4(rhinoPoint.X, rhinoPoint.Y, z, w);
+        }
+
+        /// <summary>
+        /// Creates a GlosaVector4 from a Rhino Point2f and user defined Z and W component
+        /// </summary>
+        /// <param name="rhinoVector">The Rhino Point2f</param>
+        /// <param name="z">The z value</param>
+        /// <param name="w">The w value</param>
+        /// <returns>A new GlosaVector4 with the two, X and Y, components from the Rhino Point3f and user defined Z and W</returns>
+        public static GlosaVector4 ToGlosaVector4(Point2f rhinoVector, double z, double w)
+        {
+            return new GlosaVector4(rhinoVector.X, rhinoVector.Y, z, w);
+        }
+
+        /// <summary>
+        /// Creates a Rhino Point3d from a GlosaVector4
+        /// </summary>
+        /// <param name="glosaVector">The glosaVector4 to convert</param>
+        /// <returns>A new Rhino Point3d with the three, X and Y and Z, components from the GlosaVector4</returns>
+        public static Point3d ToPoint3d(GlosaVector4 glosaVector)
+        {
+            return new Point3d(glosaVector.x, glosaVector.y, glosaVector.z);
+        }
+
+        /// <summary>
+        /// Creates a Rhino Point3f from a GlosaVector4
+        /// </summary>
+        /// <param name="glosaVector">The glosaVector4 to convert</param>
+        /// <returns>A new Rhino Point3f with the three, X and Y and Z, components from the GlosaVector4</returns>
+        public static Point3f ToPoint3f(GlosaVector4 glosaVector)
+        {
+            return new Point3f((float)glosaVector.x, (float)glosaVector.y, (float)glosaVector.z);
+        }
+        #endregion
     }
 }
