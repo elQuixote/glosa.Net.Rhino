@@ -10,5 +10,6 @@ namespace GlosaNet.Rhino.Support
 {
     public static class LineSegmentSupport
     {
+
     }
 }
