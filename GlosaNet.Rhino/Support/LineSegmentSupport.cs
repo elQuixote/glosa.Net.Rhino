@@ -1,16 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Glosa.Net.Core.Geometry;
+﻿using Glosa.Net.Core.Geometry;
 using Rhino.Geometry;
 
 namespace GlosaNet.Rhino.Support
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public static class LineSegmentSupport
     {
-
         /// <summary>
         /// 
         /// </summary>
