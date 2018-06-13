@@ -50,11 +50,21 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Support\LineSegmentSupport.cs" />
     <Compile Include="Support\MatrixSupport.cs" />
+    <Compile Include="Support\NurbsSupport.cs" />
     <Compile Include="Support\PointSupport.cs" />
+    <Compile Include="Support\PolygonSupport.cs" />
+    <Compile Include="Support\PolylineSupport.cs" />
     <Compile Include="Support\QuaternionSupport.cs" />
     <Compile Include="Support\VectorSupport.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="wrapper_path.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="wrapper_vector.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

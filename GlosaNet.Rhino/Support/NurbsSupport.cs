@@ -36,10 +36,13 @@ namespace GlosaNet.Rhino.Support
             List<Point3d> ptList = pt3DList.Select(x => (PointSupport.ToPoint3d(x))).ToList();
 
             NurbsCurve nc = new NurbsCurve(glosaNurbsCurve.degree, glosaNurbsCurve.controlPoints.Length);
-            int count = 0;
-            foreach(double d in nc.Knots)
+            for (int i = 0; i < glosaNurbsCurve.controlPoints.Length; i++)
             {
-                nc.Points.SetPoint(count, ptList[count].X, ptList[count].Y, ptList[count].Z, glosaNurbsCurve.weights[count]);
+                nc.Points.SetPoint(i, ptList[i].X, ptList[i].Y, ptList[i].Z, glosaNurbsCurve.weights[i]);
+            }
+            int count = 0;
+            foreach (double d in glosaNurbsCurve.knots)
+            {
                 nc.Knots[count] = glosaNurbsCurve.knots[count];
                 count++;
             }
