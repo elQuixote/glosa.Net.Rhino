@@ -1,8 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using Glosa.Net.Core.Geometry;
 using Rhino.Geometry;
 using Glosa.Net.Core.Interfaces;
+using Glosa.Net.Core.Geometry.Path;
+using Glosa.Net.Core.Geometry.Shape;
+using Glosa.Net.Core.Geometry.Vector;
 
 namespace GlosaNet.Rhino.Support
 {

@@ -1,11 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Glosa.Net.Core.Geometry;
 using Rhino.Geometry;
 using Glosa.Net.Core.Interfaces;
+using Glosa.Net.Core.Geometry.Polygon;
+using Glosa.Net.Core.Geometry.Path;
+using Glosa.Net.Core.Geometry.Vector;
 
 namespace GlosaNet.Rhino.Support
 {

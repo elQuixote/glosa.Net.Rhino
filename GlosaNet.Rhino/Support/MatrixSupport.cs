@@ -1,4 +1,4 @@
-﻿using Glosa.Net.Core.Geometry;
+﻿using Glosa.Net.Core.Geometry.Matrix;
 using Rhino.Geometry;
 
 namespace GlosaNet.Rhino.Support

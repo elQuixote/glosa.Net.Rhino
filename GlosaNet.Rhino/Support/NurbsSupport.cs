@@ -3,7 +3,7 @@ using System.Linq;
 using Glosa.Net.Core.Geometry.Path;
 using Rhino.Geometry;
 using Glosa.Net.Core.Interfaces;
-using Glosa.Net.Core.Geometry;
+using Glosa.Net.Core.Geometry.Vector;
 
 namespace GlosaNet.Rhino.Support
 {
@@ -21,7 +21,11 @@ namespace GlosaNet.Rhino.Support
             IVector[] ivecArray = controlPoints.Select(x => (IVector)(PointSupport.ToGlosaVector3(x.Location))).ToArray();
             double[] weights = controlPoints.Select(x => (x.Weight)).ToArray();
             double[] knots = nurbsCurve.Knots.ToArray();
-            return new GlosaNurbsCurve(ivecArray, weights, knots, nurbsCurve.Degree);          
+            double[] normalizedKnots = knots.Select(x => (x/knots[knots.Length-1])).ToArray();
+            List<double> modifiedKnots = normalizedKnots.ToList();
+            modifiedKnots.Insert(0, 0.0);
+            modifiedKnots.Insert(modifiedKnots.Count - 1, 1.0);
+            return new GlosaNurbsCurve(ivecArray, weights, modifiedKnots.ToArray(), nurbsCurve.Degree);          
         }
 
         /// <summary>
