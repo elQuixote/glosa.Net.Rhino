@@ -30,6 +30,28 @@ namespace GlosaNet.Rhino.Support
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="rhinoPoint"></param>
+        /// <param name="z"></param>
+        /// <returns></returns>
+        public static GlosaVector3 ToGlosaVector3(Point2d rhinoPoint, double z)
+        {
+            return new GlosaVector3(rhinoPoint.X, rhinoPoint.Y, z);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="rhinoPoint"></param>
+        /// <param name="z"></param>
+        /// <returns></returns>
+        public static GlosaVector3 ToGlosaVector3(Point2f rhinoPoint, double z)
+        {
+            return new GlosaVector3(rhinoPoint.X, rhinoPoint.Y, z);
+        }
+
+        /// <summary>
         /// Creates a Rhino Point2d from a GlosaVector2
         /// </summary>
         /// <param name="glosaVector">The glosaVector2 to convert</param>
@@ -40,11 +62,57 @@ namespace GlosaNet.Rhino.Support
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="glosaVector"></param>
+        /// <returns></returns>
+        public static Point2d ToPoint2d(GlosaVector3 glosaVector)
+        {
+            return new Point2d(glosaVector.x, glosaVector.y);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="glosaVector"></param>
+        /// <returns></returns>
+        public static Point2d ToPoint2d(GlosaVector4 glosaVector)
+        {
+            return new Point2d(glosaVector.x, glosaVector.y);
+        }
+
+        /// <summary>
         /// Creates a Rhino Point2f from a GlosaVector2
         /// </summary>
         /// <param name="glosaVector">The glosaVector2 to convert</param>
         /// <returns>A new Rhino Point2f with the two, X and Y, components from the GlosaVector2</returns>
         public static Point2f ToPoint2f(GlosaVector2 glosaVector)
+        {
+            Point2f rv = new Point2f();
+            rv.X = (float)glosaVector.x;
+            rv.Y = (float)glosaVector.y;
+            return rv;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="glosaVector"></param>
+        /// <returns></returns>
+        public static Point2f ToPoint2f(GlosaVector3 glosaVector)
+        {
+            Point2f rv = new Point2f();
+            rv.X = (float)glosaVector.x;
+            rv.Y = (float)glosaVector.y;
+            return rv;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="glosaVector"></param>
+        /// <returns></returns>
+        public static Point2f ToPoint2f(GlosaVector4 glosaVector)
         {
             Point2f rv = new Point2f();
             rv.X = (float)glosaVector.x;
@@ -94,6 +162,16 @@ namespace GlosaNet.Rhino.Support
         }
         #endregion
         #region Vector4
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="rhinoPoint"></param>
+        /// <returns></returns>
+        public static GlosaVector4 ToGlosaVector4(Point4d rhinoPoint)
+        {
+            return new GlosaVector4(rhinoPoint.X, rhinoPoint.Y, rhinoPoint.Z, rhinoPoint.W);
+        }
+
         /// <summary>
         /// Creates a GlosaVector4 from a Rhino Point3d and user defined W component
         /// </summary>
@@ -158,6 +236,16 @@ namespace GlosaNet.Rhino.Support
         public static Point3f ToPoint3f(GlosaVector4 glosaVector)
         {
             return new Point3f((float)glosaVector.x, (float)glosaVector.y, (float)glosaVector.z);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="glosaVector"></param>
+        /// <returns></returns>
+        public static Point4d ToPoint4d(GlosaVector4 glosaVector)
+        {
+            return new Point4d(glosaVector.x, glosaVector.y, glosaVector.z, glosaVector.w);
         }
         #endregion
     }
