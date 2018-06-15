@@ -45,7 +45,10 @@ namespace GlosaNet.Rhino.Support
                 nc.Points.SetPoint(i, ptList[i].X, ptList[i].Y, ptList[i].Z, glosaNurbsCurve.weights[i]);
             }
             int count = 0;
-            foreach (double d in glosaNurbsCurve.knots)
+            List<double> gncKnots = glosaNurbsCurve.knots.ToList();
+            gncKnots.RemoveAt(gncKnots.Count - 1);
+            gncKnots.RemoveAt(0);
+            foreach (double d in gncKnots)
             {
                 nc.Knots[count] = glosaNurbsCurve.knots[count];
                 count++;
